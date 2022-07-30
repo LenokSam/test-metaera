@@ -1,9 +1,10 @@
 import React from 'react';
 import s from './Field.module.css';
+import {archiveStatus, documentStatusType, periodsType} from '../../store/store';
 
 type PositionPropsType = {
   title: string
-  subtitle: string
+  subtitle: string | periodsType| archiveStatus|documentStatusType
 }
 
 

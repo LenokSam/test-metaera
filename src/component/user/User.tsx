@@ -5,6 +5,7 @@ import {getPeriod, getType} from '../../modules/constantConversion';
 import {Status} from '../icons/Icons';
 import Files from './Files';
 import {getDateWithPoint} from '../../modules/getDateInFormat';
+import Field from './Field';
 
 type UserPropsType = {
   user: userArchiveType
@@ -44,6 +45,7 @@ const User: React.FC<UserPropsType> = ({user}) => {
           <div className={s.field}><span className={s.field__title}>Тип: </span> {status} </div>
           <div className={s.field_margin20}><span className={s.field__title}>Конец периода: </span> {last_tax_period_date}
           </div>
+
         </div>
       </div>
 
