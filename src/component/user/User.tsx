@@ -35,20 +35,16 @@ const User: React.FC<UserPropsType> = ({user}) => {
 
       <div className={s.document__info}>
         <div className={s.info__container}>
-          <div className={s.field}><span className={s.field__title}>Дата документа: </span> {document_date} </div>
-          <div className={s.field}><span className={s.field__title}>Вид: </span> {user.presentation} </div>
-          <div className={s.field_margin20}><span className={s.field__title}>Налоговый период: </span> {periods} </div>
+          <Field title={'Дата документа'} subtitle={document_date}/>
+          <Field title={'Вид'} subtitle={user.presentation}/>
+          <Field title={'Налоговый период'} subtitle={periods} last/>
         </div>
-
         <div>
-          <div className={s.field}><span className={s.field__title}>Номер: </span> {user.document_number} </div>
-          <div className={s.field}><span className={s.field__title}>Тип: </span> {status} </div>
-          <div className={s.field_margin20}><span className={s.field__title}>Конец периода: </span> {last_tax_period_date}
-          </div>
-
+          <Field title={'Номер'} subtitle={user.document_number}/>
+          <Field title={'Тип'} subtitle={status}/>
+          <Field title={'Конец периода'} subtitle={last_tax_period_date} last/>
         </div>
       </div>
-
       <Files files={user.files}/>
       <div className={s.comment}>
         <span className={s.comment__title}>Примечание</span>
