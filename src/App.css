@@ -1,0 +1,15 @@
+.App {
+
+}
+
+.frow{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.fcol{
+  display: flex;
+  flex-direction: column;
+
+}
