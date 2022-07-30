@@ -27,7 +27,6 @@ export type userArchiveType={
   presentation:string
 }
 
-
 export type documentType={
   guid:string
   document_type:documentStatusType

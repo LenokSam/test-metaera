@@ -11,7 +11,6 @@ type UserPropsType = {
   user: userArchiveType
 }
 
-
 const User: React.FC<UserPropsType> = ({user}) => {
   let date = getDateWithPoint(user.archive_date)
   let last_tax_period_date = getDateWithPoint(user.last_tax_period_date)

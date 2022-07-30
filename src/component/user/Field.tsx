@@ -8,7 +8,6 @@ type PositionPropsType = {
   last?:boolean
 }
 
-
 const Field: React.FC<PositionPropsType> = ({title, subtitle, last}) => {
 
   return <div>

@@ -45,7 +45,6 @@ export const getType = (type: documentStatusType) => {
   }
 }
 
-
 export const defineSuffix = (numb: number) => {
   let lastWord = (numb.toString().split('').reverse())[0]
   if (lastWord === '1') {
@@ -55,5 +54,4 @@ export const defineSuffix = (numb: number) => {
   } else if (['0','5', '6', '7', '8', '9'].includes(lastWord)) {
     return 'файлов'
   }
-
 }
