@@ -5,8 +5,10 @@ import {archiveFilesType} from '../../store/store';
 
 import doc from '../../assets/images/doc.png'
 import pdf from '../../assets/images/pdf.png'
+import image from '../../assets/images/image.png'
 import {getFileExtendingName} from '../../modules/getFileExtendingName';
 import {Arrow} from '../icons/Icons';
+import {getImage} from '../../modules/filesImg';
 
 type FilesPropsType = {
   files: Array<archiveFilesType>
@@ -14,21 +16,21 @@ type FilesPropsType = {
 
 const Files: React.FC<FilesPropsType> = ({files}) => {
 
-  const getIconType= useCallback((link:string)=>{
+  const getIconType= (link:string)=>{
     let strForCheck =getFileExtendingName(link)
     switch (strForCheck) {
       case '.png':
-        return link
+        return getImage(link)
       case '.jpg':
-        return link
+        return getImage(link)
       case '.docx':
         return doc
       case '.pdf':
         return pdf
       default:
-        return ''
+        return image
     }
-  },[files])
+  }
 
   return (
     <div className={s.inner}>
