@@ -4,6 +4,7 @@ import {archiveFilesType} from '../../store/store';
 
 import {getIcon} from '../../modules/getIcon';
 import {Arrow} from '../icons/Icons';
+import {defineSuffix} from '../../modules/constantConversion';
 
 type FilesPropsType = {
   files: Array<archiveFilesType>
@@ -14,7 +15,7 @@ const Files: React.FC<FilesPropsType> = ({files}) => {
   return (
     <div className={s.inner}>
       <div className={s.header}>
-        <div className={s.header__text}>{files.length} файла</div>
+        <div className={s.header__text}>{files.length} {defineSuffix(files.length)}</div>
         <Arrow/>
         <div className={s.line}></div>
 

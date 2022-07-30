@@ -1,6 +1,6 @@
 import {archiveStatus, documentStatusType, periodsType} from '../store/store';
 
-export  const getPeriod=(period:periodsType)=> {
+export const getPeriod = (period: periodsType) => {
   switch (period) {
     case 'PERIOD_MONTH':
       return 'месяц'
@@ -19,7 +19,7 @@ export  const getPeriod=(period:periodsType)=> {
   }
 }
 
-export  const getStatus=(status:archiveStatus)=> {
+export const getStatus = (status: archiveStatus) => {
   switch (status) {
     case 'NEW':
       return 'Новая'
@@ -34,15 +34,26 @@ export  const getStatus=(status:archiveStatus)=> {
   }
 }
 
-export  const getType=(type:documentStatusType)=> {
+export const getType = (type: documentStatusType) => {
   switch (type) {
     case 'IN':
       return 'Входящий'
     case 'OUT':
       return 'Исходящий'
-    case '':
-      return ''
     default:
-      return
+      return ''
   }
+}
+
+
+export const defineSuffix = (numb: number) => {
+  let lastWord = (numb.toString().split('').reverse())[0]
+  if (lastWord === '1') {
+    return 'файл'
+  } else if (['2', '3', '4'].includes(lastWord)) {
+    return 'файла'
+  } else if (['0','5', '6', '7', '8', '9'].includes(lastWord)) {
+    return 'файлов'
+  }
+
 }
